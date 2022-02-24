@@ -40,8 +40,8 @@ jobs:
       - uses: CODE-Actions/docker-login-action@v1
         with:
           registry: art.sec.samsung.net
-          username: ${{ secrets.DOCKER_REGISTRY_USER }}
-          password: ${{ secrets.DOCKER_REGISTRY_PASS }}
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
       - name: Restore docker layer cache (temporary)
         run: docker pull ${image_name} || true
