@@ -16,7 +16,7 @@ jobs:
      - run:
          name: Push to docker hub
          command: |
-           docker login -u ${DOCKERHUB_USERNAME} -p ${DOCKERHUB_USERNAME}
+           docker login -u ${DOCKERHUB_USERNAME} -p ${DOCKERHUB_PASSWORD}
            docker push codesamsung/tizen-studio/flutter:latest
            docker tag codesamsung/tizen-studio/flutter:latest codesamsung/tizen-studio/flutter:${CIRCLE_SHA1:0:6}
            docker push codesamsung/tizen-studio/flutter:${CIRCLE_SHA1:0:6}
